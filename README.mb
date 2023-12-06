@@ -1,0 +1,74 @@
+<h1 align='center'>
+ <b>PROYECTO INDIVIDUAL Nº2 </b>
+</h1>
+
+### ***Introducción:***
+
+Presentación: la Seguridad Vial en [Buenos Aires Capital de Argentina]
+
+Bienvenidos a esta presentación sobre los siniestros viales en CABA.
+
+**Siniestros Viales: Comprendiendo la Realidad y Trabajando hacia la Prevención** 
+
+Bienvenidos a esta presentación sobre uno de los problemas más apremiantes de nuestra sociedad actual:
+ los siniestros viales. Estos eventos, que involucran accidentes de tráfico con consecuencias devastadoras, 
+ afectan a personas de todo el mundo y tienen un impacto significativo en la vida cotidiana,
+la economía y la salud pública. 
+
+**Importancia del Tema** 
+
+Las estadísticas actuales revelan una realidad alarmante: 
+
+los siniestros viales son una de las principales causas de pérdida de vidas humanas y generan impactos económicos y sociales sustanciales. 
+Este problema no solo afecta a quienes están directamente involucrados en los accidentes, 
+sino que también tiene ramificaciones en toda la sociedad. 
+
+**Causas Comunes** 
+
+La raíz de muchos siniestros viales reside en factores prevenibles, como el exceso de velocidad, la conducción distraída,
+el consumo de alcohol y drogas, el mantenimiento deficiente de los vehículos y las condiciones climáticas adversas. Al entender estas causas,
+podemos trabajar hacia soluciones efectivas. 
+
+**Consecuencias de los Siniestros Viales** 
+
+En el contexto de una ciudad como Buenos Aires, los siniestros viales pueden ser una preocupación importante debido al alto volumen de tráfico y la densidad poblacional. 
+Estos incidentes pueden tener un impacto significativo en la seguridad de los residentes y visitantes de la ciudad, así como en la infraestructura vial y los servicios de emergencia.
+
+En Argentina, cada año mueren cerca de 4.000 personas en siniestros viales. Aunque muchas jurisdicciones han logrado disminuir la cantidad de accidentes de tránsito, 
+esta sigue siendo la principal causa de muertes violentas en el país.
+
+# ETL
+
+Para la Transformación de los datos, se observó primero que teníamos el dataset "homicidios.xlsx" anidado en varias páginas, por lo cual procedimos a tener cada una en un dataframe diferente para despues hacer un merge y asi poder trabajando de una forma comoda.
+siendo asi utilizamos las columnas 
+
+***D_hecho,	N_VICTIMAS,	FECHA DEL SINIESTRO,	AÑO,	HORA_DEL_SINIESTRO,	HH,	LUGAR_DEL_HECHO,	TIPO_DE_CALLE,	COMUNA,	XY (CABA),	pos x,	pos y,	PARTICIPANTES,	ACUSADO,	ROL	VICTIMA,	SEXO,	EDAD,	FECHA_FALLECIMIENTO,	SEMESTRE***
+
+***Nulos***
+Los nulos en el CSV se presentaban como "SD" que quiere decir sin dato
+
+***Duplicados***
+
+No se encontraron ningun tipo de dato duplicado en el analicis
+
+***Extras***
+
++ Se creó una nueva columna llamada "semestre" para poder realizar nuestro KPI
++ Se extrajo sólo el año de la fecha del siniestro para sumar a nuestro KPI y población
++ Se realizó WebScrapping para obtener datos de la poblacion para cada año, por cada Comuna para asi poder sacar con mejor resultados los KPI
++ Dentro de "LIMPIEZA_DATOS.IPYNB" realizamos el cálculo de la Tasa de mortalidad solicitada para los Indicadores de desempeño solicitados por el Observatorio
+
+***Atencion: el promedio de censos realizados para obtener la población, fue realizado en base al porcentaje de crecimiento, son datos estimativos para realizar el KPI correctamente***
+
+***EDA***
+
+Graficamos los datos mas relevantes para tener una mejor visualizacion
+
+***KPI1***
+El prime KPI nos pedia Reducir en un 10% la tasa de homicidios en siniestros viales de los últimos seis meses,
+en CABA, en comparación con la tasa de homicidios en siniestros viales del semestre anterior 
+
+***KPI2***
+El segundo KPI nos pedir Reducir en un 7% la cantidad de accidentes mortales de motociclistas en el último año, 
+en CABA, respecto al año anterior.
+
